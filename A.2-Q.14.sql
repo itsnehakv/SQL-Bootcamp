@@ -6,7 +6,7 @@ ON cd.bookings.memid=cd.members.memid
 WHERE surname ILIKE 'FArrell' AND firstname ILIKE 'DAVID';
 
 
--- SOLUTION 2: WITHOUT JOIN
+-- SOLUTION 2: WITHOUT JOIN, WITH SUBQUERYS
 select starttime from cd.bookings WHERE memid IN
 (select memid from cd.members 
 WHERE surname ILIKE 'farrell' AND firstname ILIKE 'david');
