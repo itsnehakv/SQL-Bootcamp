@@ -6,3 +6,12 @@ ON cd.bookings.facid=cd.facilities.facid
 WHERE starttime BETWEEN '2012-09-21' AND '2012-09-22' AND name ILIKE '%TENNIS COURT%';
 
 -- MISTAKES MADE: Did not read question carefully lolz, especially in the TENNIS COURT part. But found solution by myself.
+
+-- SOLUTIONS by Jose Portilla/Instructor
+select starttime, name from cd.bookings INNER JOIN cd.facilities
+ON cd.bookings.facid=cd.facilities.facid
+WHERE startttime >= '2012-09-21' AND  startttime < '2012-09-22' AND cd.facilities.name IN ('Tennis Court 1', 'Tennis Court 2');
+
+select starttime, name from cd.bookings INNER JOIN cd.facilities
+ON cd.bookings.facid=cd.facilities.facid
+WHERE startttime >= '2012-09-21' AND startttime < '2012-09-22' AND cd.facilities.facid IN (0,1);
